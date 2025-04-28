@@ -1,4 +1,4 @@
-# Next.js 15 AI Resume Builder
+# Next.js Resume Builder with Gemini AI
 
 Build and deploy a professional **full-stack SaaS** (software-as-a-service) application with **Stripe Checkout** and the **ChatGPT API**. 
 
@@ -15,6 +15,3 @@ Features:
 - Auto-save hook
 - & more
 
-Watch the free **11-hour** tutorial on YouTube: https://www.youtube.com/watch?v=ySqesLjz6K0
-
-![thumbnail](https://github.com/user-attachments/assets/f3eaef96-9674-4201-afeb-4deb3500ab6d)
