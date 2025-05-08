@@ -33,8 +33,8 @@ export default async function Page() {
         userId,
       },
     }),
-    //getUserSubscriptionLevel(userId),
-    getUserSubscriptionLevel(),
+    getUserSubscriptionLevel(userId),
+    //getUserSubscriptionLevel(),
   ]);
 
   return (

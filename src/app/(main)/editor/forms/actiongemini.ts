@@ -11,6 +11,7 @@ import {
   WorkExperience,
 } from "@/lib/validation";
 import { auth } from "@clerk/nextjs/server";
+import { env } from '@/env';
 
 export async function generateSummary(input: GenerateSummaryInput) {
   const { userId } = await auth();
@@ -23,7 +24,7 @@ export async function generateSummary(input: GenerateSummaryInput) {
     generateSummarySchema.parse(input);
 
   const userMessage = `
-Please generate a professional resume summary from this data:
+Please generate only one professional resume summary in paragraph format from this data:
 
 Job title: ${jobTitle || "N/A"}
 
@@ -53,18 +54,22 @@ ${skills}
 `;
 
   const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
+    apiKey: env.GEMINI_API_KEY,
+    //process.env.GEMINI_API_KEY,
   });
 
   const config = {
     thinkingConfig: {
-      thinkingBudget: 0,
+      thinkingBudget: 1,
     },
     responseMimeType: 'text/plain',
   };
 
-  const model = 'gemini-1.5-pro-latest';
+  const model = 'gemini-2.5-pro-exp-03-25';
+  //'gemini-1.5-pro-exp-0827';
+  //'gemini-2.5-pro-exp-03-25';
   //'gemini-2.5-pro-preview-03-25';
+  // 'gemini-1.5-pro-latest';
 
   const contents = [
     {
@@ -134,7 +139,8 @@ ${description}
   ];
 
   const response = await ai.models.generateContentStream({
-    model: "gemini-1.5-pro-latest",
+    model: 'gemini-2.5-pro-exp-03-25',
+    //"gemini-1.5-pro-latest",
     contents,
     config: { responseMimeType: "text/plain" },
   });
