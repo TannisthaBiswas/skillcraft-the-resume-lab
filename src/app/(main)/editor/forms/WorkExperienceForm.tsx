@@ -259,7 +259,8 @@ function WorkExperienceItem({
           <FormItem>
             <FormLabel>Description</FormLabel>
             <FormControl>
-              <Textarea {...field} />
+              <Textarea {...field}
+              spellCheck={true}  />
             </FormControl>
             <FormMessage />
           </FormItem>

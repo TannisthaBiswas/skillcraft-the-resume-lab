@@ -65,11 +65,8 @@ ${skills}
     responseMimeType: 'text/plain',
   };
 
-  const model = 'gemini-2.5-pro-exp-03-25';
-  //'gemini-1.5-pro-exp-0827';
-  //'gemini-2.5-pro-exp-03-25';
-  //'gemini-2.5-pro-preview-03-25';
-  // 'gemini-1.5-pro-latest';
+  const model = 'gemini-1.5-flash';
+ 
 
   const contents = [
     {
@@ -139,8 +136,8 @@ ${description}
   ];
 
   const response = await ai.models.generateContentStream({
-    model: 'gemini-2.5-pro-exp-03-25',
-    //"gemini-1.5-pro-latest",
+    model: 'gemini-1.5-flash',
+    
     contents,
     config: { responseMimeType: "text/plain" },
   });

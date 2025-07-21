@@ -121,7 +121,8 @@ export default function PersonalInfoForm({
               <FormItem>
                 <FormLabel>Job title</FormLabel>
                 <FormControl>
-                  <Input {...field} />
+                  <Input {...field} 
+                 />
                 </FormControl>
                 <FormMessage />
               </FormItem>

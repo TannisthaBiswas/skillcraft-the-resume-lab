@@ -44,13 +44,14 @@ export default function BorderStyleButton({
         : Squircle;
 
   return (
-    <Button
-      variant="outline"
-      size="icon"
+   <Button
+      // Remove size="icon" to allow content to dictate width, and make it rectangular
       title="Change border style"
       onClick={handleClick}
+      className="bg-white text-black hover:bg-gray-200 focus:ring-gray-700 px-4 py-2" // Added px-4 py-2 for padding
     >
-      <Icon className="size-5" />
+      <Icon className="size-5 mr-2" /> {/* Added mr-2 for spacing between icon and text */}
+      Border Style
     </Button>
   );
 }

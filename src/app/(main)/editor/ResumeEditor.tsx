@@ -3,7 +3,7 @@
 import useUnloadWarning from "@/hooks/useUnloadWarning";
 import { ResumeServerData } from "@/lib/types";
 import { cn, mapToResumeValues } from "@/lib/utils";
-import { ResumeValues } from "@/lib/validation";
+import { ResumeValues } from "@/lib/validation"; // This is where ResumeValues comes from
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Breadcrumbs from "./Breadcrumbs";
@@ -16,11 +16,48 @@ interface ResumeEditorProps {
   resumeToEdit: ResumeServerData | null;
 }
 
+// Define a default empty ResumeValues object that precisely matches your ResumeValues interface.
+// This is constructed based on your provided src/lib/validation.ts
+const defaultEmptyResumeValues: ResumeValues = {
+  // From GeneralInfoValues (generalInfoSchema)
+  title: "",
+  description: "",
+
+  // From PersonalInfoValues (personalInfoSchema)
+  photo: null, // As per ResumeValues type, which can be File | string | null
+  firstName: "",
+  lastName: "",
+  jobTitle: "",
+  city: "",
+  country: "",
+  phone: "",
+  email: "",
+
+  // From WorkExperienceValues (workExperienceSchema)
+  workExperiences: [], // Default for optional array
+
+  // From EducationValues (educationSchema)
+  educations: [], // Default for optional array
+
+  // From SkillsValues (skillsSchema)
+  skills: [], // skillSchema has .default([]) in validation.ts
+
+  // From SummaryValues (summarySchema)
+  summary: "",
+
+  // Direct properties in resumeSchema
+  colorHex: "",
+  borderStyle: "",
+  theme: "classic", // Defaulting to "classic" as discussed previously
+  // 'id' is an optional property added by Omit/&, so it doesn't need to be explicitly initialized if undefined is acceptable.
+};
+
 export default function ResumeEditor({ resumeToEdit }: ResumeEditorProps) {
   const searchParams = useSearchParams();
 
   const [resumeData, setResumeData] = useState<ResumeValues>(
-    resumeToEdit ? mapToResumeValues(resumeToEdit) : {},
+    // If resumeToEdit exists, map it; otherwise, use the correctly structured defaultEmptyResumeValues
+    resumeToEdit ? mapToResumeValues(resumeToEdit) : defaultEmptyResumeValues,
   );
 
   const [showSmResumePreview, setShowSmResumePreview] = useState(false);
@@ -50,7 +87,9 @@ export default function ResumeEditor({ resumeToEdit }: ResumeEditorProps) {
           saved automatically.
         </p>
       </header>
+
       <main className="relative grow">
+
         <div className="absolute bottom-0 top-0 flex w-full">
           <div
             className={cn(

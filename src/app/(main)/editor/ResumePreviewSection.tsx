@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
 import BorderStyleButton from "./BorderStyleButton";
 import ColorPicker from "./ColorPicker";
+import ThemePicker from "./ThemePicker";
+import { ThemeName } from "@/lib/themes";
 
 interface ResumePreviewSectionProps {
   resumeData: ResumeValues;
@@ -17,9 +19,10 @@ export default function ResumePreviewSection({
 }: ResumePreviewSectionProps) {
   return (
     <div
-      className={cn("group relative hidden w-full md:flex md:w-1/2", className)}
+      className={cn("group relative hidden w-full md:flex md:w-1/2 flex-col", className)} // ADDED 'flex-col' HERE
     >
-      <div className="absolute left-1 top-1 flex flex-none flex-col gap-3 opacity-50 transition-opacity group-hover:opacity-100 lg:left-3 lg:top-3 xl:opacity-100">
+      
+      <div className="flex flex-row items-center justify-start gap-4 bg-secondary p-3 flex-shrink-0"> {/* Added flex-shrink-0 */}
         <ColorPicker
           color={resumeData.colorHex}
           onChange={(color) =>
@@ -32,11 +35,22 @@ export default function ResumePreviewSection({
             setResumeData({ ...resumeData, borderStyle })
           }
         />
+<ThemePicker
+  theme={resumeData.theme as ThemeName}
+  onChange={(theme) =>
+    setResumeData({ ...resumeData, theme })
+  }
+/>
+
+
       </div>
-      <div className="flex w-full justify-center overflow-y-auto bg-secondary p-3">
+
+      {/* Container for the resume preview, now takes remaining space */}
+      <div className="flex w-full justify-center overflow-y-auto bg-secondary p-3 flex-grow"> {/* Added flex-grow */}
         <ResumePreview
           resumeData={resumeData}
           className="max-w-2xl shadow-md"
+          theme={resumeData.theme}
         />
       </div>
     </div>

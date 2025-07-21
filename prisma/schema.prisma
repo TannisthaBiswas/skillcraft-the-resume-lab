@@ -24,6 +24,7 @@ model Resume {
   photoUrl    String?
   colorHex    String  @default("#000000")
   borderStyle String  @default("squircle")
+  theme       String? @default("classic")
   summary     String?
   firstName   String?
   lastName    String?
@@ -35,7 +36,8 @@ model Resume {
 
   workExperiences WorkExperience[]
   educations      Education[]
-  skills          String[]
+  skills          Json             @default("[]")
+  //skills          String[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

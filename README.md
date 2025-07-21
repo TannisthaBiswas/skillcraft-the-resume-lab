@@ -1,6 +1,6 @@
 # Next.js Resume Builder with Gemini AI
 
-Build and deploy a professional **full-stack SaaS** (software-as-a-service) application with **Stripe Checkout** and the **ChatGPT API**. 
+Build and deploy a professional **full-stack SaaS** (software-as-a-service) application with **Stripe Checkout** and **Gemini API**. 
 
 Features:
 - Multi-step form using React Hook Form
@@ -13,5 +13,6 @@ Features:
 - URL state management
 - Postgres DB and file uploads to Vercel Blob
 - Auto-save hook
-- & more
+
+
 

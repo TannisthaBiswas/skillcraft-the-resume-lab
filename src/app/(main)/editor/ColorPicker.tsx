@@ -27,8 +27,7 @@ export default function ColorPicker({ color, onChange }: ColorPickerProps) {
     <Popover open={showPopover} onOpenChange={setShowPopover}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
-          size="icon"
+        
           title="Change resume color"
           onClick={() => {
             if (!canUseCustomizations(subscriptionLevel)) {
@@ -37,8 +36,10 @@ export default function ColorPicker({ color, onChange }: ColorPickerProps) {
             }
             setShowPopover(true);
           }}
+          className="bg-white text-black hover:bg-gray-200 focus:ring-gray-700 px-4 py-2" // Added px-4 py-2 for padding
         >
-          <PaletteIcon className="size-5" />
+          <PaletteIcon className="size-5 mr-2" /> {/* Added mr-2 for spacing */}
+          Color
         </Button>
       </PopoverTrigger>
       <PopoverContent

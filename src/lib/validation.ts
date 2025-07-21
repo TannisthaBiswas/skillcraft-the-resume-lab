@@ -67,16 +67,31 @@ export const educationSchema = z.object({
 
 export type EducationValues = z.infer<typeof educationSchema>;
 
-export const skillsSchema = z.object({
-  skills: z.array(z.string().trim()).optional(),
-});
+// export const skillsSchema = z.object({
+//   skills: z.array(z.string().trim()).optional(),
+// });
 
-export type SkillsValues = z.infer<typeof skillsSchema>;
+// export type SkillsValues = z.infer<typeof skillsSchema>;
 
 export const summarySchema = z.object({
   summary: optionalString,
 });
 
+// Define the schema for a single skill with proficiency
+export const skillSchema = z.object({
+  name: z.string().trim().min(1, "Skill name is required"),
+  proficiency: z.number().min(0).max(5).default(3), // Proficiency out of 5, with a default
+});
+
+// Type for a single skill object
+export type Skill = z.infer<typeof skillSchema>;
+
+export const skillsSchema = z.object({
+  // Change skills to an array of skillSchema objects
+  skills: z.array(skillSchema).optional().default([]), // Add .default([]) for new resumes
+});
+
+export type SkillsValues = z.infer<typeof skillsSchema>;
 export type SummaryValues = z.infer<typeof summarySchema>;
 
 export const resumeSchema = z.object({
@@ -88,7 +103,10 @@ export const resumeSchema = z.object({
   ...summarySchema.shape,
   colorHex: optionalString,
   borderStyle: optionalString,
+    theme: optionalString,
 });
+
+
 
 export type ResumeValues = Omit<z.infer<typeof resumeSchema>, "photo"> & {
   id?: string;

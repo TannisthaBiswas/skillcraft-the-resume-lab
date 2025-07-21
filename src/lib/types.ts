@@ -11,6 +11,14 @@ export const resumeDataInclude = {
   educations: true,
 } satisfies Prisma.ResumeInclude;
 
-export type ResumeServerData = Prisma.ResumeGetPayload<{
+// Explicitly override the 'skills' field to ensure it's treated as Prisma.JsonValue
+export type ResumeServerData = Omit<Prisma.ResumeGetPayload<{
   include: typeof resumeDataInclude;
-}>;
+}>, 'skills'> & {
+  skills: Prisma.JsonValue; // Explicitly declare skills as Prisma.JsonValue
+};
+
+export type SkillServer = {
+  name: string;
+  proficiency: number;
+};
