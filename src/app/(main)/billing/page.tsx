@@ -30,16 +30,21 @@ export default async function Page() {
     : null;
 
   return (
-    <main className="mx-auto w-full max-w-7xl space-y-6 px-3 py-6">
-      <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-r from-purple-800 to-purple-600 text-white rounded-xl shadow-2xl mb-8">
-        <h1 className="text-4xl font-extrabold tracking-tight mb-2">
+    <div className="flex grow flex-col">
+
+    <header className="bg-gradient-to-r from-purple-400 to-purple-600 px-6 py-6 text-center text-white shadow-lg sm:px-10">
+      <div className="mx-auto max-w-3xl">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
           Your Billing Hub
         </h1>
-        <p className="text-lg font-light text-purple-200">
-          Manage your subscription and unlock new possibilities.
+        <p className="mt-2 text-sm font-light opacity-90">
+         Manage your subscription and unlock new possibilities.
         </p>
       </div>
+    </header>
 
+    <main className="mx-auto w-full max-w-7xl space-y-6 px-3 py-6">
+ 
       <div className="bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Your Current Plan</h2>
         <p className="text-xl text-gray-700">
@@ -55,11 +60,11 @@ export default async function Page() {
               {subscription.stripeCancelAtPeriodEnd && (
                 <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md w-full max-w-md mx-auto mb-4">
                   <p>
-                    <span className="font-bold">Heads up:</span> Your subscription will be
-                    canceled on{" "}
+                    <span className="font-bold">Heads up:</span> Your subscription will be canceled on{" "}
                     <span className="font-semibold">
                       {formatDate(subscription.stripeCurrentPeriodEnd, "MMMM dd, yyyy")}
-                    </span>.
+                    </span>
+                    .
                   </p>
                 </div>
               )}
@@ -137,5 +142,6 @@ export default async function Page() {
         </Link>
       </div>
     </main>
+    </div>
   );
 }

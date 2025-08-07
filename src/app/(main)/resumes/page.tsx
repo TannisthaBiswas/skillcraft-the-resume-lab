@@ -37,6 +37,17 @@ export default async function Page() {
   ]);
 
   return (
+    <div className="flex grow flex-col">
+      <header className="bg-gradient-to-r from-purple-400 to-purple-600 px-6 py-6 text-center text-white shadow-lg sm:px-10">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Your Creations
+          </h1>
+          <p className="mt-2 text-sm font-light opacity-90">
+            You’ve created {totalCount} documents so far. Ready for the next one? ✨
+          </p>
+        </div>
+      </header>
     <main className="mx-auto w-full max-w-7xl space-y-6 px-3 py-6">
       <div className="space-y-1">
   <h1 className="text-3xl font-bold">Your Creations</h1>
@@ -57,5 +68,6 @@ export default async function Page() {
         ))}
       </div>
     </main>
+    </div>
   );
 }

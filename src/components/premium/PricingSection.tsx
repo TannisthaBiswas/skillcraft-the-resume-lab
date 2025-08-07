@@ -44,24 +44,24 @@ export default function PricingSection() {
             <DollarSign className="h-10 w-10 text-emerald-500 mb-4" />
             <h3 className="text-2xl font-bold mb-2 text-gray-800">Free Tier</h3>
             <p className="text-gray-600 mb-4">Perfect for getting started.</p>
-            <p className="text-4xl font-extrabold text-indigo-700 mb-6">₹0<span className="text-lg font-normal text-gray-500">/month</span></p>
+            <p className="text-4xl font-extrabold text-purple-700 mb-6">₹0<span className="text-lg font-normal text-gray-500">/month</span></p>
             <ul className="text-gray-700 text-left space-y-2 mb-6">
               <li>✓ Standard Templates</li>
               <li>✓ Real-time Preview</li>
               <li>✓ PDF Export</li>
             </ul>
-            <Button asChild className="w-full bg-indigo-600 text-white hover:bg-indigo-700">
+            <Button asChild className="w-full bg-purple-600 text-white hover:bg-purple-700">
               <Link href="/resumes">Launch Your Ascent</Link>
             </Button>
           </div>
 
           {/* Elite Tier Card */}
-          <div className="flex flex-col items-center p-8 bg-white rounded-lg shadow-xl border-2 border-indigo-500 transform hover:scale-105 transition-transform duration-300 relative">
+          <div className="flex flex-col items-center p-8 bg-white rounded-lg shadow-xl border-2 border-purple-500 transform hover:scale-105 transition-transform duration-300 relative">
             <div className="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Most Popular</div>
             <Sparkles className="h-10 w-10 text-violet-600 mb-4" />
             <h3 className="text-2xl font-bold mb-2 text-gray-800">Elite Tier</h3>
             <p className="text-gray-600 mb-4">Unlock your full potential.</p>
-            <p className="text-4xl font-extrabold text-indigo-700 mb-6">₹1000<span className="text-lg font-normal text-gray-500">/month</span></p>
+            <p className="text-4xl font-extrabold text-purple-700 mb-6">₹1000<span className="text-lg font-normal text-gray-500">/month</span></p>
             <ul className="text-gray-700 text-left space-y-2 mb-6">
               <li>✓ AI Assistance</li>
               <li>✓ Up to 3 Resumes</li>
@@ -71,7 +71,7 @@ export default function PricingSection() {
             <Button
               onClick={() => handlePremiumClick(env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_MONTHLY)}
               disabled={loading}
-              className="w-full bg-indigo-600 text-white hover:bg-indigo-700"
+              className="w-full bg-purple-600 text-white hover:bg-purple-700"
             >
               Go Elite
             </Button>
@@ -82,7 +82,7 @@ export default function PricingSection() {
             <ShieldCheck className="h-10 w-10 text-blue-500 mb-4" />
             <h3 className="text-2xl font-bold mb-2 text-gray-800">Prime Tier</h3>
             <p className="text-gray-600 mb-4">For ultimate career domination.</p>
-            <p className="text-4xl font-extrabold text-indigo-700 mb-6">₹2000<span className="text-lg font-normal text-gray-500">/month</span></p>
+            <p className="text-4xl font-extrabold text-purple-700 mb-6">₹2000<span className="text-lg font-normal text-gray-500">/month</span></p>
             <ul className="text-gray-700 text-left space-y-2 mb-6">
               <li>✓ All Elite Features</li>
               <li>✓ Unlimited Resumes</li>
@@ -92,7 +92,7 @@ export default function PricingSection() {
             <Button
               onClick={() => handlePremiumClick(env.NEXT_PUBLIC_STRIPE_PRICE_ID_PRO_PLUS_MONTHLY)}
               disabled={loading}
-              className="w-full bg-indigo-600 text-white hover:bg-indigo-700"
+              className="w-full bg-purple-600 text-white hover:bg-purple-700"
             >
               Go Prime
             </Button>

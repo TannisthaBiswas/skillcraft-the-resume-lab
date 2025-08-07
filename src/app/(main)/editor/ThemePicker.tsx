@@ -120,8 +120,8 @@ export default function ThemePicker({ theme, onChange }: ThemePickerProps) {
                 className={`relative border-2 p-1 rounded-lg cursor-pointer transition-all duration-200
                   ${
                     isCurrent
-                      ? "border-blue-500 ring-2 ring-blue-500"
-                      : "border-gray-200 hover:border-blue-300"
+                      ? "border-purple-500 ring-2 ring-purple-500"
+                      : "border-gray-200 hover:border-purple-300"
                   }
                   ${isLocked ? "opacity-60 cursor-not-allowed" : ""}`}
                 onClick={() => handleThemeSelect(themeName)}
@@ -144,7 +144,7 @@ export default function ThemePicker({ theme, onChange }: ThemePickerProps) {
                 {/* Theme Name (Capitalized for display only) */}
                 <p
                   className={`mt-2 text-center text-sm font-medium ${
-                    isCurrent ? "text-blue-600" : "text-gray-800"
+                    isCurrent ? "text-purple-600" : "text-gray-800"
                   }`}
                 >
                   {themeName.charAt(0).toUpperCase() + themeName.slice(1)}
@@ -157,7 +157,7 @@ export default function ThemePicker({ theme, onChange }: ThemePickerProps) {
                   </div>
                 )}
                 {isCurrent && (
-                  <div className="absolute top-2 left-2 bg-blue-500 text-white rounded-full p-1">
+                  <div className="absolute top-2 left-2 bg-purple-500 text-white rounded-full p-1">
                     <Check className="h-3 w-3" />
                   </div>
                 )}

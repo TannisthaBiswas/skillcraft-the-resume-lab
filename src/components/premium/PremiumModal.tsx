@@ -74,7 +74,7 @@ export default function PremiumModal() {
             </div>
             <div className="mx-6 border-l" />
             <div className="flex w-1/2 flex-col space-y-5">
-              <h3 className="bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-center text-lg font-bold text-transparent">
+              <h3 className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-center text-lg font-bold text-transparent">
                 Prime
               </h3>
               <ul className="list-inside space-y-2">

@@ -62,7 +62,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center bg-gray-50 pb-16 text-gray-900">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden py-20 px-5 md:py-28 lg:py-36 bg-gradient-to-br from-indigo-700 to-violet-600 text-white">
+      <section className="relative w-full overflow-hidden py-20 px-5 md:py-28 lg:py-36 bg-gradient-to-br from-purple-500 to-purple-600 text-white">
         <div className="container mx-auto flex flex-col items-center justify-between gap-10 md:flex-row md:text-left lg:gap-16">
           <div className="max-w-xl space-y-6 text-center md:text-left">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl leading-tight">
@@ -72,11 +72,11 @@ export default function Home() {
               </span>{" "}
               in Hyper-Speed
             </h1>
-            <p className="text-lg text-indigo-100 opacity-90 leading-relaxed">
+            <p className="text-lg text-purple-100 opacity-90 leading-relaxed">
               Our <span className="font-bold">cutting-edge AI-powered platform</span> revolutionizes your job search, transforming your potential into a strategically optimized, interview-magnet document.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
-              <Button asChild size="lg" className="bg-white text-indigo-700 hover:bg-gray-100 hover:text-indigo-800 font-semibold shadow-lg">
+              <Button asChild size="lg" className="bg-white text-purple-700 hover:bg-gray-100 hover:text-purple-800 font-semibold shadow-lg">
                 <Link href="/resumes">Launch Your Ascent</Link>
               </Button>
             </div>
@@ -92,7 +92,7 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-          <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-indigo-500 opacity-20 blur-3xl z-0"></div>
+          <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-purple-500 opacity-20 blur-3xl z-0"></div>
           <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 rounded-full bg-violet-400 opacity-15 blur-3xl z-0"></div>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function Home() {
                 key={index}
                 className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100"
               >
-                <div className="mb-4 p-3 rounded-full bg-indigo-100 text-indigo-600">
+                <div className="mb-4 p-3 rounded-full bg-purple-100 text-purple-600">
                   <feature.icon className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
@@ -137,7 +137,7 @@ export default function Home() {
 
 
       {/* Call to Action Section */}
-      <section className="w-full py-16 px-5 bg-indigo-50">
+      <section className="w-full py-16 px-5 bg-purple-50">
         <div className="container mx-auto text-center space-y-6">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-800">
             Your Next Career Chapter Ignites Now
@@ -145,7 +145,7 @@ export default function Home() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Stop merely applying and start conquering. Generate a resume that truly reflects your unparalleled potential and propels you into the future.
           </p>
-          <Button asChild size="lg" className="bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-xl transition-all duration-300">
+          <Button asChild size="lg" className="bg-purple-600 text-white hover:bg-purple-700 hover:shadow-xl transition-all duration-300">
             <Link href="/resumes">Create Your Winning Resume</Link>
           </Button>
         </div>

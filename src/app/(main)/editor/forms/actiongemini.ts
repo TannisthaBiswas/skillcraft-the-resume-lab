@@ -58,12 +58,12 @@ ${skills}
     //process.env.GEMINI_API_KEY,
   });
 
-  const config = {
-    thinkingConfig: {
-      thinkingBudget: 1,
-    },
-    responseMimeType: 'text/plain',
-  };
+  // const config = {
+  //   thinkingConfig: {
+  //     thinkingBudget: 1,
+  //   },
+  //   responseMimeType: 'text/plain',
+  // };
 
   const model = 'gemini-1.5-flash';
  
@@ -81,7 +81,7 @@ ${skills}
 
   const response = await ai.models.generateContentStream({
     model,
-    config,
+    
     contents,
   });
 
