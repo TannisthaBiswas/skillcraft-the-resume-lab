@@ -45,7 +45,7 @@ export default async function Page() {
   {totalCount > 0 ? (
     <p className="">You’ve created {totalCount} documents so far. Ready for the next one? ✨</p>
   ) : (
-    <p>Welcome! It looks like you haven't created any documents yet. Let's start with your first one! ✨</p>
+    <p>Welcome! It looks like you haven&apos;t created any documents yet. Let&apos;s start with your first one! ✨</p>
   )}
 </div>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

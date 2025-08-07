@@ -11,6 +11,7 @@ interface CreateResumeButtonProps {
 
 export default function CreateResumeButton({ canCreate }: CreateResumeButtonProps) {
   const premiumModal = usePremiumModal();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPending, startTransition] = useTransition();
 
   const handleNewResumeClick = () => {
