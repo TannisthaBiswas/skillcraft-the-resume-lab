@@ -7,29 +7,54 @@ import {
   ShieldCheck, // For ATS compliance/professionalism
   LayoutTemplate, // For templates/design
   Workflow, // For effortless workflow
+  Lightbulb, // For AI guidance
+  FileText, // For cover letter
+  Palette, // For themes/colors
+  Download, // For PDF extraction
 } from "lucide-react"; // Import relevant Lucide icons
+import PricingSection from "@/components/premium/PricingSection";
 
 // Define your features with icons, titles, and descriptions
 const features = [
   {
     icon: Sparkles,
-    title: "Strategic AI Matching",
-    description: "Our intelligent AI uncovers hidden keyword opportunities, perfectly aligning your skills with job requirements.",
+    title: "AI Keyword Optimization",
+    description: "Our AI finds the best keywords to match your skills with job requirements, making your resume highly visible.",
   },
   {
     icon: ShieldCheck,
-    title: "ATS Domination",
-    description: "Get past the bots and straight to human eyes with professionally crafted, Applicant Tracking System-friendly designs.",
+    title: "ATS-Friendly Designs",
+    description: "Create resumes that easily pass Applicant Tracking Systems (ATS), ensuring hiring managers see your application.",
+  },
+  {
+    icon: Lightbulb,
+    title: "AI-Powered Content Creation",
+    description: "Get smart suggestions and AI assistance to write impactful job descriptions, summaries, and achievements.",
   },
   {
     icon: LayoutTemplate,
-    title: "Designer-Quality Aesthetics",
-    description: "Choose from a curated collection of modern, visually stunning templates that make an unforgettable impression.",
+    title: "Modern Template Selection",
+    description: "Choose from a range of professionally designed, visually appealing templates that leave a strong impression.",
+  },
+  {
+    icon: FileText,
+    title: "Automated Cover Letters",
+    description: "Generate tailored cover letters instantly, perfectly matching your resume and the job you're applying for.",
+  },
+  {
+    icon: Palette,
+    title: "Customizable Themes & Colors",
+    description: "Personalize your resume's look with various themes and color options to reflect your unique professional brand.",
+  },
+  {
+    icon: Download,
+    title: "Easy PDF Resume Import",
+    description: "Convert your existing PDF resumes into an editable format, saving you time and effort in rebuilding.",
   },
   {
     icon: Workflow,
-    title: "Accelerated Creation",
-    description: "Go from a blank page to a polished, professional resume in record time, with an intuitive, guided process.",
+    title: "Fast & Guided Creation",
+    description: "Build a polished, professional resume quickly with our intuitive, step-by-step guided process.",
   },
 ];
 
@@ -40,44 +65,32 @@ export default function Home() {
       <section className="relative w-full overflow-hidden py-20 px-5 md:py-28 lg:py-36 bg-gradient-to-br from-indigo-700 to-violet-600 text-white">
         <div className="container mx-auto flex flex-col items-center justify-between gap-10 md:flex-row md:text-left lg:gap-16">
           <div className="max-w-xl space-y-6 text-center md:text-left">
-            {/* Logo (if uncommented) */}
-            {/* <Image
-              src={logo}
-              alt="Logo"
-              width={150}
-              height={150}
-              className="mx-auto md:mx-0"
-            /> */}
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl leading-tight">
-              Unlock Your{" "}
+              Forge Your{" "}
               <span className="inline-block bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent">
-                Interview-Winning Profile
+                Future-Ready Profile
               </span>{" "}
-              in Minutes
+              in Hyper-Speed
             </h1>
             <p className="text-lg text-indigo-100 opacity-90 leading-relaxed">
-              Our <span className="font-bold">AI-powered resume builder</span> transforms your experience into a strategically optimized document, giving you an unfair advantage in every job application.
+              Our <span className="font-bold">cutting-edge AI-powered platform</span> revolutionizes your job search, transforming your potential into a strategically optimized, interview-magnet document.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
               <Button asChild size="lg" className="bg-white text-indigo-700 hover:bg-gray-100 hover:text-indigo-800 font-semibold shadow-lg">
-                <Link href="/resumes">Launch Your Career</Link>
+                <Link href="/resumes">Launch Your Ascent</Link>
               </Button>
-              {/* <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-indigo-700 font-semibold shadow-lg">
-                <Link href="/editor">Witness the AI</Link>
-              </Button> */}
             </div>
           </div>
-          <div className="relative z-10 p-4 rounded-xl shadow-2xl bg-white/20 backdrop-blur-sm"> {/* Added some styling to the image container */}
+          <div className="relative z-10 p-4 rounded-xl shadow-2xl bg-white/20 backdrop-blur-sm">
             <Image
               src={resumePreview}
               alt="Resume preview"
               width={600}
-              height={800} // Added height for better aspect ratio control
+              height={800}
               className="rounded-lg shadow-xl ring-4 ring-white/50 lg:rotate-[1.5deg] transform transition-transform duration-300 hover:scale-105"
             />
           </div>
         </div>
-        {/* Abstract background shapes/gradients for visual interest (optional) */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
           <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-indigo-500 opacity-20 blur-3xl z-0"></div>
           <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 rounded-full bg-violet-400 opacity-15 blur-3xl z-0"></div>
@@ -89,10 +102,10 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="text-center mb-12 space-y-4">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-800">
-              Your Unfair Advantage in the Job Market
+              Your Quantum Leap in the Job Market
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Transform your potential into undeniable proof. Our platform ensures every word counts towards your next big opportunity.
+              Unleash your full potential and dominate the hiring landscape. Our platform ensures every byte of your profile propels you towards your next breakthrough opportunity.
             </p>
           </div>
 
@@ -117,14 +130,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Optional: Call to Action Section (if needed, otherwise hero CTA is sufficient) */}
+      {/* Pricing/Subscription Section */}
+      
+<PricingSection />
+      
+
+
+      {/* Call to Action Section */}
       <section className="w-full py-16 px-5 bg-indigo-50">
         <div className="container mx-auto text-center space-y-6">
           <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-gray-800">
-            Your Next Career Chapter Starts Now
+            Your Next Career Chapter Ignites Now
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Stop passively applying and start actively winning. Generate a resume that truly reflects your potential.
+            Stop merely applying and start conquering. Generate a resume that truly reflects your unparalleled potential and propels you into the future.
           </p>
           <Button asChild size="lg" className="bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-xl transition-all duration-300">
             <Link href="/resumes">Create Your Winning Resume</Link>
